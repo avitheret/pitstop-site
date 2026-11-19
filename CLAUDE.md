@@ -33,6 +33,7 @@ No tests, linter or formatter are configured. Verify a change by running `npm ru
 - Product images are still placeholder drawings: inline SVG illustrations in the `ART` map in `app.js`, chosen by each product's `art` key (`art()` adds the `v-glow` / `v-detail` variants). There are no real product photos yet. A new product needs an existing `ART` key or a new drawing.
 - Prices are integer shekels, formatted by `ils()`. Use `bd()` to wrap Latin/number runs inside Hebrew text in `<bdi>` so they don't flip in RTL. For inline LTR content (phone numbers, SKUs), use the `.mono` and `.ltr` classes.
 - Design tokens (colors, fonts) are CSS custom properties at the top of `src/assets/style.css`.
+- Search engines are blocked on purpose: `src/template.html` has `<meta name="robots" content="noindex, nofollow, noarchive">` on every page. Don't remove it unless the owner asks (e.g. when launching on the real domain). A `robots.txt` would not work here: on a GitHub Pages project site it would sit at `/pitstop-site/robots.txt`, and crawlers only read the root one.
 - The footer marks the site as a demo: products, prices and performance figures are illustrative only.
 
 ## Deploy
