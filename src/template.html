@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<link rel="icon" href="assets/helmet.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karantina:wght@400;700&family=IBM+Plex+Sans+Hebrew:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body {{BODY_ATTRS}}>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="gGlow"><stop offset="0" stop-color="#ff8a4a"/><stop offset=".35" stop-color="#ff3a2a"/><stop offset=".75" stop-color="#9b0f16"/><stop offset="1" stop-color="#2a0507"/></radialGradient>
+    <radialGradient id="gHalo"><stop offset="0" stop-color="#ff3a2a" stop-opacity=".65"/><stop offset="1" stop-color="#ff3a2a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="gMetal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4a54"/><stop offset=".45" stop-color="#26262d"/><stop offset="1" stop-color="#141418"/></linearGradient>
+    <linearGradient id="gChrome" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9e7ec"/><stop offset=".5" stop-color="#6f6d76"/><stop offset="1" stop-color="#2a2a30"/></linearGradient>
+  </defs>
+</svg>
+
+<div class="util"><div class="wrap">
+  <span><i class="dot"></i>משלוח חינם בהזמנה מעל <b class="mono">₪500</b></span>
+  <span>ייעוץ מומחה: <b class="mono ltr">03-6884836</b></span>
+  <span>החורטים 6, חולון</span>
+</div></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="פיטסטופ, לדף הבית"><img src="assets/logo.png" alt="PIT-STOP" width="806" height="143"></a>
+    <nav class="nav-links" aria-label="ניווט ראשי">
+      <a href="products.html" data-nav="products">מוצרים</a>
+      <a href="dyno.html" data-nav="dyno">דיינו וכיוון</a>
+      <a href="about.html" data-nav="about">אודות</a>
+      <a href="contact.html" data-nav="contact">צור קשר</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="car-pill" id="carPill" type="button" data-go-finder>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 15l2-6a2 2 0 0 1 2-1.4h10A2 2 0 0 1 19 9l2 6v3h-2.5M3 15v3h2.5M3 15h18M8 18h8"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+        <span id="carPillText">חיפוש לפי רכב</span>
+      </button>
+      <button class="cart-btn" id="cartBtn" type="button" aria-label="סל קניות">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="תפריט" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="wrap mobile-nav" id="mobileNav" aria-label="ניווט נייד">
+    <a href="products.html">מוצרים</a><a href="dyno.html">דיינו וכיוון</a><a href="about.html">אודות</a><a href="contact.html">צור קשר</a>
+  </nav>
+</header>
+
+<main id="app">{{CONTENT}}</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <img src="assets/logo.png" alt="PIT-STOP" style="height:28px;width:auto">
+      <p>סדנה לשיפור ביצועים וספורט מוטורי מאז 2002. נציגים רשמיים של KW, ST, REMUS, APR, PCP, OMP ו-HOOSIER בישראל.</p>
+    </div>
+    <div>
+      <h4>מוצרים</h4>
+      <ul id="footCats"></ul>
+    </div>
+    <div>
+      <h4>החברה</h4>
+      <ul>
+        <li><a href="about.html">אודות פיטסטופ</a></li>
+        <li><a href="dyno.html">דיינו וכיוון מנוע</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+        <li><a href="https://www.facebook.com/PitStopMotorsport">פייסבוק</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>הסדנה</h4>
+      <ul>
+        <li>החורטים 6, חולון</li>
+        <li><a href="tel:036884836" class="mono ltr">03-6884836</a></li>
+        <li>pitstop.co.il</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 לגריפ גורו ספורט מוטורי בע״מ</span>
+    <span>אתר הדגמה. המוצרים, המחירים ונתוני הביצועים באתר הם לצורכי הדגמה בלבד.</span>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="סל הקניות" aria-hidden="true">
+  <header><h2>הסל שלך</h2><button class="x" id="closeCart" type="button" aria-label="סגירת הסל">✕</button></header>
+  <div class="items" id="cartItems"></div>
+  <footer id="cartFoot"></footer>
+</aside>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "pitstop-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pit-Stop motorsport website (Hebrew, RTL). Static, pre-rendered.",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "npm run build && npx browser-sync start --server dist --port 3000 --no-ui --no-notify"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "browser-sync": "3.0.3",
+    "jsdom": "24.1.3"
+  }
+}
