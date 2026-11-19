@@ -37,4 +37,6 @@ No tests, linter or formatter are configured. Verify a change by running `npm ru
 
 ## Deploy
 
-GitHub Pages via `.github/workflows/deploy.yml`: every push to `main` runs `npm ci && npm run build` and publishes `dist/`. The folder is not a git repo yet; see the README for the one-time setup.
+GitHub Pages via `.github/workflows/deploy.yml`: every push to `main` runs `npm ci && npm run build` and publishes `dist/`. Repo: https://github.com/avitheret/pitstop-site, live at https://avitheret.github.io/pitstop-site/.
+
+**Standing rule from the owner:** when a task is finished and works locally (`npm run build` passes and the page checks out in the dev server), commit and push to `main` without asking, which deploys it. Then confirm the "Deploy site" run passed (`gh run watch`). Don't push half-finished or broken work.
