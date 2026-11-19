@@ -4,7 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Pit-Stop motorsport shop website: a static, pre-rendered multi-page site. **The site is Hebrew and right-to-left** (`<html lang="he" dir="rtl">`). All user-facing copy is Hebrew; layout and CSS must work RTL (prefer logical properties such as `padding-inline`, `inset-inline-start`).
+A pitch/demo website that PitStop Digital is building for a client: Pit-Stop, a motorsport tuning shop in Holon. It is meant to win the client and may later become their real site. It is a static, pre-rendered multi-page site. **The site is Hebrew and right-to-left** (`<html lang="he" dir="rtl">`). All user-facing copy is Hebrew; layout and CSS must work RTL (prefer logical properties such as `padding-inline`, `inset-inline-start`).
+
+## Owner's working rules
+
+- **Hebrew copy:** Claude may write and rewrite site copy freely, with no approval step. Write natural Israeli Hebrew in the existing voice: direct and expert, a shop talking to car people. Keep brand and model names in Latin script (APR, KW, Golf R).
+- **Product data:** realistic invented demo data (products, prices, specs, compatible cars) is fine. Keep it plausible: real brands, sensible prices and power figures.
+- **Design:** the current look (dark "night garage", red/ember glow, Karantina display font, specs set like a dyno sheet) is the starting point, not a lock. Visual improvements are welcome; keep the site consistent and change the tokens in `style.css` rather than hard-coding values.
+- **Images:** keep the SVG drawings for now; draw a new SVG in the `ART` map for any new product. No photos, stock or AI images.
+- **Check both screens:** verify every visual change on desktop and on mobile (~375px wide), with no horizontal scroll and no clipped Hebrew text.
+- **Cart:** visual only today (`localStorage`, no backend, no payments). Real ordering is planned for later, so keep cart logic tidy and in one place (the cart section of `app.js`) so a real order flow can plug in. Don't build payments unless asked.
 
 ## Commands
 
@@ -30,7 +39,7 @@ No tests, linter or formatter are configured. Verify a change by running `npm ru
 
 ## Content notes
 
-- Product images are still placeholder drawings: inline SVG illustrations in the `ART` map in `app.js`, chosen by each product's `art` key (`art()` adds the `v-glow` / `v-detail` variants). There are no real product photos yet. A new product needs an existing `ART` key or a new drawing.
+- Product images are still placeholder drawings: inline SVG illustrations in the `ART` map in `app.js`, chosen by each product's `art` key (`art()` adds the `v-glow` / `v-detail` variants). They use the shared gradients defined in `template.html` (`gGlow`, `gHalo`, `gMetal`, `gChrome`).
 - Prices are integer shekels, formatted by `ils()`. Use `bd()` to wrap Latin/number runs inside Hebrew text in `<bdi>` so they don't flip in RTL. For inline LTR content (phone numbers, SKUs), use the `.mono` and `.ltr` classes.
 - Design tokens (colors, fonts) are CSS custom properties at the top of `src/assets/style.css`.
 - Search engines are blocked on purpose: `src/template.html` has `<meta name="robots" content="noindex, nofollow, noarchive">` on every page. Don't remove it unless the owner asks (e.g. when launching on the real domain). A `robots.txt` would not work here: on a GitHub Pages project site it would sit at `/pitstop-site/robots.txt`, and crawlers only read the root one.
